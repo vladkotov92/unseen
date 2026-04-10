@@ -29,7 +29,7 @@ EOF
 # Check running as root
 check_root() {
     if [ "$EUID" -ne 0 ]; then
-        printf "${RED}[!] Please run as root: sudo bash onion-vpn-linux.sh${RESET}\n"
+        printf "${RED}[!] Please run as root: sudo bash unseen.sh${RESET}\n"
         exit 1
     fi
 }
@@ -38,7 +38,7 @@ check_root() {
 check_dependencies() {
     for cmd in tor jq curl; do
         if ! command -v "$cmd" >/dev/null 2>&1; then
-            printf "${RED}[!] '$cmd' not found. Run: bash install-linux.sh${RESET}\n"
+            printf "${RED}[!] '$cmd' not found. Run: bash install.sh${RESET}\n"
             exit 1
         fi
     done
